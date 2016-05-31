@@ -1,4 +1,12 @@
 ja:
+  title_signin: 'サインイン'
+  button_signin: 'サインイン'
+  label_remember_me: 'ログイン状態を保持する'
+
+  label_signout: 'サインアウト'
+
+  message_invalid_signin: 'ID かパスワードが違います。'
+
   activerecord:
     attributes:
       user:
