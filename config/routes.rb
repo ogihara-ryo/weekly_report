@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :reports
   root 'welcome#index'
 
   resources :users
