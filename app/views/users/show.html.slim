@@ -1,0 +1,27 @@
+h1 = @user.signin_id
+
+dl.dl-horizontal
+  dt
+    strong id
+  dd = @user.id
+
+  dt
+    strong signin_id
+  dd = @user.signin_id
+
+  dt
+    strong admin
+  dd = @user.admin
+
+  dt
+    strong created_at
+  dd = @user.created_at
+
+  dt
+    strong updated_at
+  dd = @user.updated_at
+
+
+= link_to 'Edit', edit_user_path(@user)
+'|
+= link_to 'Back', users_path
