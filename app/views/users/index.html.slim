@@ -1,0 +1,30 @@
+h1 Users
+
+table.list
+  thead
+    tr
+      th id
+      th signin_id
+      th admin
+      th created_at
+      th update_at
+      th
+      th
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.id
+        td = user.signin_id
+        td = user.admin
+        td = user.created_at
+        td = user.updated_at
+        / TODO: 行全体を show リンクとし、 show ボタンを削除
+        td = link_to 'Show', user
+        td = link_to 'Edit', edit_user_path(user)
+        td = link_to 'Destroy', user, data: {:confirm => '本当に削除しますか？'}, :method => :delete
+
+br
+
+= link_to 'New User', new_user_path
