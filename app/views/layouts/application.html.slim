@@ -7,5 +7,20 @@ html
     = csrf_meta_tags
 
   body
+    header
+      nav.navbar.navbar-default
+        .container
+          .navbar-header
+            = link_to 'Weekly Report', root_path, class: 'navbar-brand'
+
+          - if signed_in?
+            ul.nav.navbar-nav.navbar-right
+              li = link_to t(:label_signout), signout_path, method: :delete, class: 'glyphicon glyphicon-log-out'
+
     .container
+      - flash.each do |name, msg|
+        div class="alert alert-#{ name.to_s == 'notice' ? 'success' : 'danger' }"
+          button.close type='button' data-dismiss='alert' aria-hidden='true' x
+          = content_tag :div, msg, id: "flash_#{name}"
+
       == yield
