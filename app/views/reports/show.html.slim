@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong User:
+  = @report.user
+p
+  strong Place:
+  = @report.place
+p
+  strong Overwork:
+  = @report.overwork
+p
+  strong Work:
+  = @report.work
+p
+  strong Probrem:
+  = @report.probrem
+p
+  strong Solution:
+  = @report.solution
+p
+  strong Plan:
+  = @report.plan
+p
+  strong Other:
+  = @report.other
+
+= link_to 'Edit', edit_report_path(@report)
+'|
+= link_to 'Back', reports_path

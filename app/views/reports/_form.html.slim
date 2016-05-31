@@ -1,0 +1,33 @@
+= form_for @report do |f|
+  - if @report.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
+      ul
+        - @report.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :place
+    = f.text_area :place
+  .field
+    = f.label :overwork
+    = f.number_field :overwork
+  .field
+    = f.label :work
+    = f.text_area :work
+  .field
+    = f.label :probrem
+    = f.text_area :probrem
+  .field
+    = f.label :solution
+    = f.text_area :solution
+  .field
+    = f.label :plan
+    = f.text_area :plan
+  .field
+    = f.label :other
+    = f.text_area :other
+  .actions = f.submit
