@@ -2,29 +2,29 @@ p#notice = notice
 
 .panel.panel-default
   .panel-heading
-    h3.panel-title
+    h3.panel-title= t 'activerecord.attributes.report.user'
       = @report.user
   .panel-body
     dl.dl-horizontal
-      dt Place
+      dt = t 'activerecord.attributes.report.user'
       dd = @report.place
 
-      dt Overwork
+      dt = t 'activerecord.attributes.report.overwork'
       dd = @report.overwork
 
-      dt Work
+      dt = t 'activerecord.attributes.report.work'
       dd = @report.work
 
-      dt Probrem
+      dt = t 'activerecord.attributes.report.probrem'
       dd = @report.probrem
 
-      dt Solution
+      dt = t 'activerecord.attributes.report.solution'
       dd = @report.solution
 
-      dt Plan
+      dt = t 'activerecord.attributes.report.plan'
       dd = @report.plan
 
-      dt Other
+      dt = t 'activerecord.attributes.report.other'
       dd = @report.other
 
 = link_to 'Edit', edit_report_path(@report), class: 'btn btn-link'

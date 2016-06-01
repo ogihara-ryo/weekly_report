@@ -14,3 +14,12 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード(確認)'
         admin: '管理者'
+      report:
+        user: '投稿者'
+        place: '作業場所'
+        overwork: '残業時間'
+        work: '作業内容'
+        probrem: '問題点'
+        solution: '解決策'
+        plan: '来週の予定'
+        other: 'その他'
