@@ -11,6 +11,7 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
     @comment = Comment.new
+    @comments = Comment.findby(Comment.report_params)
   end
 
   # GET /reports/new
@@ -29,7 +30,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
+        format.html { redirect_to @report, notice: '週報は正常に作成されました' }
         format.json { render :show, status: :created, location: @report }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class ReportsController < ApplicationController
   def update
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
+        format.html { redirect_to @report, notice: '週報は正常に更新されました' }
         format.json { render :show, status: :ok, location: @report }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class ReportsController < ApplicationController
   def destroy
     @report.destroy
     respond_to do |format|
-      format.html { redirect_to reports_url, notice: 'Report was successfully destroyed.' }
+      format.html { redirect_to reports_url, notice: '週報は正常に削除されました' }
       format.json { head :no_content }
     end
   end
