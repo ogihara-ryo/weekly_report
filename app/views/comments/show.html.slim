@@ -6,10 +6,10 @@ p#notice = notice
       = @comment.report
   .panel-body
     dl.dl-horizontal
-      dt User
+      dt = t 'activerecord.attributes.comment.user'
       dd = @comment.user
 
-      dt Description
+      dt = t 'activerecord.attributes.comment.description'
       dd = @comment.description
 
 = link_to 'Edit', edit_comment_path(@comment), class: 'btn btn-link'

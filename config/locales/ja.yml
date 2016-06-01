@@ -23,3 +23,6 @@ ja:
         solution: '解決策'
         plan: '来週の予定'
         other: 'その他'
+      comment:
+        user: '投稿者'
+        description: 'コメント'
