@@ -8,11 +8,11 @@
   = comment.description
 
   .pull-right
-    = link_to 'Show', comment, class: 'btn btn-link'
+    = link_to '詳細', comment, class: 'btn btn-link'
     '|
-    = link_to 'Edit', edit_comment_path(comment), class: 'btn btn-link'
+    = link_to '編集', edit_comment_path(comment), class: 'btn btn-link'
     '|
-    = link_to 'Destroy', comment, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-link'
+    = link_to '削除', comment, data: {:confirm => '本当に削除しますか?'}, :method => :delete, class: 'btn btn-link'
   hr
 
-= link_to 'New Comment', new_comment_path, class: 'btn btn-default'
+= link_to '新しいコメント', new_comment_path, class: 'btn btn-default'

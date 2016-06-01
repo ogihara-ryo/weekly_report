@@ -12,6 +12,6 @@ p#notice = notice
       dt = t 'activerecord.attributes.comment.description'
       dd = @comment.description
 
-= link_to 'Edit', edit_comment_path(@comment), class: 'btn btn-link'
+= link_to '編集', edit_comment_path(@comment), class: 'btn btn-link'
 '|
-= link_to 'Back', comments_path, class: 'btn btn-link'
+= link_to '戻る', comments_path, class: 'btn btn-link'
