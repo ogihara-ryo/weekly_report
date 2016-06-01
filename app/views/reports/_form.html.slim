@@ -1,33 +1,53 @@
-= form_for @report do |f|
-  - if @report.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
-      ul
-        - @report.errors.full_messages.each do |message|
-          li = message
+.form-horizontal
+  = form_for @report do |f|
+    .form-group
+      - if @report.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
+          ul
+            - @report.errors.full_messages.each do |message|
+              li = message
 
-  .field
-    = f.label :user
-    = f.text_field :user
-  .field
-    = f.label :place
-    = f.text_area :place
-  .field
-    = f.label :overwork
-    = f.number_field :overwork
-  .field
-    = f.label :work
-    = f.text_area :work
-  .field
-    = f.label :probrem
-    = f.text_area :probrem
-  .field
-    = f.label :solution
-    = f.text_area :solution
-  .field
-    = f.label :plan
-    = f.text_area :plan
-  .field
-    = f.label :other
-    = f.text_area :other
-  .actions = f.submit
+    .form-group
+      = f.label :user, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_field :user, class: 'form-control'
+
+    .form-group
+      = f.label :place, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_area :place, class: 'form-control', rows: '2'
+
+    .form-group
+      = f.label :overwork, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.number_field :overwork, class: 'form-control'
+
+    .form-group
+      = f.label :work, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_area :work, class: 'form-control', rows: '5'
+
+    .form-group
+      = f.label :probrem, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_area :probrem, class: 'form-control', rows: '5'
+
+    .form-group
+      = f.label :solution, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_area :solution, class: 'form-control', rows: '5'
+
+    .form-group
+      = f.label :plan, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_area :plan, class: 'form-control', rows: '5'
+
+    .form-group
+      = f.label :other, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_area :other, class: 'form-control', rows: '5'
+
+    .actions
+      .col-sm-offset-2
+        = f.submit '登録する', class: 'btn btn-default'

@@ -1,25 +1,18 @@
-h1 Listing comments
+- @comments.each do |comment|
+  = comment.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[comment.created_at.wday]}) %H:%M") 
+  br
+  = comment.report
+  br
+  = comment.user
+  br
+  = comment.description
 
-table
-  thead
-    tr
-      th Report
-      th User
-      th Description
-      th
-      th
-      th
+  .pull-right
+    = link_to '詳細', comment, class: 'btn btn-link'
+    '|
+    = link_to '編集', edit_comment_path(comment), class: 'btn btn-link'
+    '|
+    = link_to '削除', comment, data: {:confirm => '本当に削除しますか?'}, :method => :delete, class: 'btn btn-link'
+  hr
 
-  tbody
-    - @comments.each do |comment|
-      tr
-        td = comment.report
-        td = comment.user
-        td = comment.description
-        td = link_to 'Show', comment
-        td = link_to 'Edit', edit_comment_path(comment)
-        td = link_to 'Destroy', comment, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Comment', new_comment_path
+= link_to '新しいコメント', new_comment_path, class: 'btn btn-default'

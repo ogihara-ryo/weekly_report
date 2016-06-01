@@ -1,15 +1,17 @@
 p#notice = notice
 
-p
-  strong Report:
-  = @comment.report
-p
-  strong User:
-  = @comment.user
-p
-  strong Description:
-  = @comment.description
+.panel.panel-default
+  .panel-heading
+    h3.panel-title
+      = @comment.report
+  .panel-body
+    dl.dl-horizontal
+      dt = t 'activerecord.attributes.comment.user'
+      dd = @comment.user
 
-= link_to 'Edit', edit_comment_path(@comment)
+      dt = t 'activerecord.attributes.comment.description'
+      dd = @comment.description
+
+= link_to '編集', edit_comment_path(@comment), class: 'btn btn-link'
 '|
-= link_to 'Back', comments_path
+= link_to '戻る', comments_path, class: 'btn btn-link'
