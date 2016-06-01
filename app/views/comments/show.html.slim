@@ -1,15 +1,17 @@
 p#notice = notice
 
-p
-  strong Report:
-  = @comment.report
-p
-  strong User:
-  = @comment.user
-p
-  strong Description:
-  = @comment.description
+.panel.panel-default
+  .panel-heading
+    h3.panel-title
+      = @comment.report
+  .panel-body
+    dl.dl-horizontal
+      dt User
+      dd = @comment.user
 
-= link_to 'Edit', edit_comment_path(@comment)
+      dt Description
+      dd = @comment.description
+
+= link_to 'Edit', edit_comment_path(@comment), class: 'btn btn-link'
 '|
-= link_to 'Back', comments_path
+= link_to 'Back', comments_path, class: 'btn btn-link'
