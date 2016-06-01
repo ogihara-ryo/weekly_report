@@ -1,30 +1,32 @@
 p#notice = notice
 
-p
-  strong User:
-  = @report.user
-p
-  strong Place:
-  = @report.place
-p
-  strong Overwork:
-  = @report.overwork
-p
-  strong Work:
-  = @report.work
-p
-  strong Probrem:
-  = @report.probrem
-p
-  strong Solution:
-  = @report.solution
-p
-  strong Plan:
-  = @report.plan
-p
-  strong Other:
-  = @report.other
+.panel.panel-default
+  .panel-heading
+    h3.panel-title
+      = @report.user
+  .panel-body
+    dl.dl-horizontal
+      dt Place
+      dd = @report.place
 
-= link_to 'Edit', edit_report_path(@report)
+      dt Overwork
+      dd = @report.overwork
+
+      dt Work
+      dd = @report.work
+
+      dt Probrem
+      dd = @report.probrem
+
+      dt Solution
+      dd = @report.solution
+
+      dt Plan
+      dd = @report.plan
+
+      dt Other
+      dd = @report.other
+
+= link_to 'Edit', edit_report_path(@report), class: 'btn btn-link'
 '|
-= link_to 'Back', reports_path
+= link_to 'Back', reports_path, class: 'btn btn-link'
