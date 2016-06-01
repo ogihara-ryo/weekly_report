@@ -24,6 +24,6 @@ ja:
         plan: '来週の予定'
         other: 'その他'
       comment:
-        report: '記事'
+        report: '週報'
         user: '投稿者'
         description: 'コメント'
