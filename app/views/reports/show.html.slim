@@ -27,8 +27,13 @@ p#notice = notice
       dt = t 'activerecord.attributes.report.other'
       dd = @report.other
 
+.pull-right
+  = link_to '編集', edit_report_path(@report), class: 'btn btn-link'
+  '|
+  = link_to '戻る', reports_path, class: 'btn btn-link'
+
 == render 'new_comments_form'
 
-= link_to '編集', edit_report_path(@report), class: 'btn btn-link'
-'|
-= link_to '戻る', reports_path, class: 'btn btn-link'
+br
+
+== render 'index_comments'
