@@ -19,7 +19,7 @@ ja:
       report:
         user: '投稿者'
         place: '作業場所'
-        overwork: '残業時間'
+        overwork: '残業時間[h]'
         work: '作業内容'
         probrem: '問題点'
         solution: '解決策'

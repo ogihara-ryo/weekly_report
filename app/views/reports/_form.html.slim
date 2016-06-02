@@ -8,15 +8,12 @@
             - @report.errors.full_messages.each do |message|
               li = message
 
-    .form-group
-      = f.label :user, class: 'col-sm-2 control-label'
-      .col-sm-10
-        = f.text_field :user, class: 'form-control'
+    = f.hidden_field :user_id, value: current_user&.id
 
     .form-group
       = f.label :place, class: 'col-sm-2 control-label'
       .col-sm-10
-        = f.text_area :place, class: 'form-control', rows: '2'
+        = f.text_area :place, class: 'form-control', rows: '3'
 
     .form-group
       = f.label :overwork, class: 'col-sm-2 control-label'
@@ -26,28 +23,28 @@
     .form-group
       = f.label :work, class: 'col-sm-2 control-label'
       .col-sm-10
-        = f.text_area :work, class: 'form-control', rows: '5'
+        = f.text_area :work, class: 'form-control', rows: '6'
 
     .form-group
       = f.label :probrem, class: 'col-sm-2 control-label'
       .col-sm-10
-        = f.text_area :probrem, class: 'form-control', rows: '5'
+        = f.text_area :probrem, class: 'form-control', rows: '6'
 
     .form-group
       = f.label :solution, class: 'col-sm-2 control-label'
       .col-sm-10
-        = f.text_area :solution, class: 'form-control', rows: '5'
+        = f.text_area :solution, class: 'form-control', rows: '6'
 
     .form-group
       = f.label :plan, class: 'col-sm-2 control-label'
       .col-sm-10
-        = f.text_area :plan, class: 'form-control', rows: '5'
+        = f.text_area :plan, class: 'form-control', rows: '6'
 
     .form-group
       = f.label :other, class: 'col-sm-2 control-label'
       .col-sm-10
-        = f.text_area :other, class: 'form-control', rows: '5'
+        = f.text_area :other, class: 'form-control', rows: '6'
 
     .actions
       .col-sm-offset-2
-        = f.submit '登録する', class: 'btn btn-default'
+        = f.submit '送信', class: 'btn btn-default'
