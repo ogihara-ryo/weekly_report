@@ -12,9 +12,11 @@ html
         .container
           .navbar-header
             = link_to 'Weekly Report', root_path, class: 'navbar-brand'
+
             ul.nav.navbar-nav
               li = link_to '週報一覧', reports_path, class: 'btn btn-link'
-              li = link_to 'ユーザー一覧', users_path, class: 'btn btn-link'
+              - if current_user&.admin?
+                li = link_to 'ユーザー一覧', users_path, class: 'btn btn-link'
 
           - if signed_in?
             ul.nav.navbar-nav.navbar-right
