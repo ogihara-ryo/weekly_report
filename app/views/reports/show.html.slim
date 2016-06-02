@@ -3,11 +3,12 @@ p#notice = notice
 .panel.panel-default
   .panel-heading
     h3.panel-title
-      = @report.user
+      = @report.user.name
+
   .panel-body
     dl.dl-horizontal
       dt = t 'activerecord.attributes.report.user'
-      dd = @report.place
+      dd = simple_format @report.place
       hr
 
       dt = t 'activerecord.attributes.report.overwork'
@@ -15,31 +16,33 @@ p#notice = notice
       hr
 
       dt = t 'activerecord.attributes.report.work'
-      dd = @report.work
+      dd = simple_format @report.work
       hr
 
       dt = t 'activerecord.attributes.report.probrem'
-      dd = @report.probrem
+      dd = simple_format @report.probrem
       hr
 
       dt = t 'activerecord.attributes.report.solution'
-      dd = @report.solution
+      dd = simple_format @report.solution
       hr
 
       dt = t 'activerecord.attributes.report.plan'
-      dd = @report.plan
+      dd = simple_format @report.plan
       hr
 
       dt = t 'activerecord.attributes.report.other'
-      dd = @report.other
+      dd = simple_format @report.other
 
 .pull-right
-  = link_to '編集', edit_report_path(@report), class: 'btn btn-link'
-  '|
+  - if current_user?(@report.user)
+    = link_to '編集', edit_report_path(@report), class: 'btn btn-link'
+    '|
   = link_to '戻る', reports_path, class: 'btn btn-link'
 
-== render 'new_comments_form'
-
 br
+hr
 
-== render 'index_comments'
+== render 'comments/index'
+
+== render 'comments/new'

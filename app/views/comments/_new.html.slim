@@ -1,4 +1,4 @@
-= form_for [@report, @comment] do |f|
+= form_for @comment, url: report_comments_path(@report) do |f|
   = f.hidden_field :report_id, value: @report.id
   = f.hidden_field :user_id, value: current_user&.id
 
@@ -6,6 +6,4 @@
     = f.text_area :description, class: 'form-control', rows: '5', placeholder: 'コメント'
 
   .actions.pull-right
-    = f.submit '送信', class: 'btn btn-default'
-
-= link_to '戻る', @comment.report, class: 'btn btn-link'
+    = f.submit 'コメントする', class: 'btn btn-default'
