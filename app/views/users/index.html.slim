@@ -4,7 +4,7 @@ table.list
   thead
     tr
       th id
-      th signin_id
+      th name
       th admin
       th created_at
       th update_at
@@ -16,7 +16,7 @@ table.list
     - @users.each do |user|
       tr
         td = user.id
-        td = user.signin_id
+        td = user.name
         td = user.admin
         td = user.created_at
         td = user.updated_at
