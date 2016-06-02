@@ -7,4 +7,8 @@ module ApplicationHelper
   def current_user?(user)
     user == current_user
   end
+
+  def name_with_comment_count(report)
+    report.comments.present? ? "#{report.user.name} (#{report.comments.count})" : report.user.name
+  end
 end

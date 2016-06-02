@@ -13,13 +13,13 @@ ja:
         signin_id: 'ID'
         password: 'パスワード'
         password_confirmation: 'パスワード(確認)'
-        name: '名称'
+        name: 'ユーザー名'
         admin: '管理者'
 
       report:
         user: '投稿者'
         place: '作業場所'
-        overwork: '残業時間'
+        overwork: '残業時間[h]'
         work: '作業内容'
         probrem: '問題点'
         solution: '解決策'

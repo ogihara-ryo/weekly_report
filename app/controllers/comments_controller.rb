@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :set_report
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
@@ -64,6 +65,10 @@ class CommentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_report
+      @report = Report.find(params[:report_id])
+    end
+
     def set_comment
       @comment = Comment.find(params[:id])
     end
