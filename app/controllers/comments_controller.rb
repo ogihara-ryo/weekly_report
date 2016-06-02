@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'コメントは正常に更新されました' }
+        format.html { redirect_to report_path(@comment.report_id), notice: 'コメントは正常に更新されました' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'コメントは正常に削除されました' }
+      format.html { redirect_to report_path(@comment.report), notice: 'コメントは正常に削除されました' }
       format.json { head :no_content }
     end
   end
