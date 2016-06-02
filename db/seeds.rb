@@ -9,7 +9,8 @@ User.connection.execute(%|SELECT setval ('users_id_seq', 1, false)|)
   user = User.create(
     signin_id: "user#{i}",
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+    name: "User Name#{i}"
   )
 
   report = Report.create(
