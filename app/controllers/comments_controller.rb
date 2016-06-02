@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to report_path(@comment.report_id), notice: 'コメントは正常に作成されました' }
+        format.html { redirect_to report_path(@comment.report_id), notice: '作成しました' }
         format.json { render :show, status: :created, location: report_path(@comment.report_id) }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to report_path(@comment.report_id), notice: 'コメントは正常に更新されました' }
+        format.html { redirect_to report_path(@comment.report_id), notice: '更新しました' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to report_path(@comment.report), notice: 'コメントは正常に削除されました' }
+      format.html { redirect_to report_path(@comment.report), notice: '削除しました' }
       format.json { head :no_content }
     end
   end
