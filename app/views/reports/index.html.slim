@@ -1,23 +1,7 @@
-h1 Listing reports
-
 table.table.table-hover.table-condensed
-  thead
-    tr
-      th = t 'activerecord.attributes.user.signin_id'
-      th = t 'activerecord.attributes.report.user'
-      th
-      th
-      th
-
   tbody
     - @reports.each do |report|
       tr
-        td = report.user.signin_id
-        td = report.user
-        td = link_to '詳細', report, class: 'btn btn-link'
-        td = link_to '編集', edit_report_path(report), class: 'btn btn-link'
-        td = link_to '削除', report, data: {:confirm => '本当に削除しますか?'}, :method => :delete, class: 'btn btn-link'
+        td = link_to name_with_comment_count(report), report, class: 'btn btn-link'
 
-br
-
-= link_to '新しい週報', new_report_path, class: 'btn btn-default'
+= link_to '新規作成', new_report_path, class: 'btn btn-default'
