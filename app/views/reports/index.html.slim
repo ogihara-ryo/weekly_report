@@ -1,16 +1,9 @@
 h1 Listing reports
 
-table.table.table-bordered.table-hover.table-condensed
+table.table.table-hover.table-condensed
   thead
     tr
       th = t 'activerecord.attributes.report.user'
-      th = t 'activerecord.attributes.report.place'
-      th = t 'activerecord.attributes.report.overwork'
-      th = t 'activerecord.attributes.report.work'
-      th = t 'activerecord.attributes.report.probrem'
-      th = t 'activerecord.attributes.report.solution'
-      th = t 'activerecord.attributes.report.plan'
-      th = t 'activerecord.attributes.report.other'
       th
       th
       th
@@ -19,13 +12,6 @@ table.table.table-bordered.table-hover.table-condensed
     - @reports.each do |report|
       tr
         td = report.user
-        td = report.place
-        td = report.overwork
-        td = report.work
-        td = report.probrem
-        td = report.solution
-        td = report.plan
-        td = report.other
         td = link_to '詳細', report, class: 'btn btn-link'
         td = link_to '編集', edit_report_path(report), class: 'btn btn-link'
         td = link_to '削除', report, data: {:confirm => '本当に削除しますか?'}, :method => :delete, class: 'btn btn-link'
