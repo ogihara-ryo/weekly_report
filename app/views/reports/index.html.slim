@@ -1,8 +1,14 @@
 - provide :title, t('title_report_index')
-table.table.table-hover.table-condensed
-  tbody
-    - @reports.each do |report|
-      tr
-        td = link_to name_with_comment_count(report), report, class: 'btn btn-link'
 
-= link_to '新規作成', new_report_path, class: 'btn btn-default'
+- 3.times do |value|
+  h1 = "#{Date.today.beginning_of_week.weeks_ago(value)} - #{Date.today.beginning_of_week.weeks_ago(value) + 6.day}"
+
+  table.table.table-hover.table-condensed
+    tbody
+      - report_weeks_ago = @reports.where(created_at: weeks_ago(value))
+      - report_weeks_ago.each do |report|
+        tr
+          td = link_to name_with_comment_count(report), report, class: 'btn btn-link'
+
+  - if value == 0
+    = link_to '新規作成', new_report_path, class: 'btn btn-default'
