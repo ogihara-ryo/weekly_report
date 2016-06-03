@@ -5,7 +5,7 @@
       '|
       = link_to '削除', report_comment_path(@report, comment), data: { confirm: '本当に削除しますか?' }, method: :delete, class: 'btn btn-link'
 
-  p = comment.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[comment.created_at.wday]}) %H:%M")
+  p = l comment.created_at, format: :comment
   p = comment.user.name
   p = comment.description
 

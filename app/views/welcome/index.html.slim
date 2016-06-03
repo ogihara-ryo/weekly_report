@@ -1,6 +1,6 @@
 - 3.times do |value|
   - days = all_day_of_week_ago(value)
-  h1 = "#{days.first.strftime('%m/%d')} - #{days.last.strftime('%m/%d')}"
+  h1 = "#{l(days.first, format: :report)} - #{l(days.last, format: :report)}"
 
   table.table.table-hover.table-condensed
     tbody

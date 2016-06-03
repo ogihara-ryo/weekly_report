@@ -38,3 +38,8 @@ ja:
         report: '週報'
         user: '投稿者'
         description: 'コメント'
+
+  time:
+    formats:
+      report: "%m/%d"
+      comment: "%Y/%m/%d %H:%M"
