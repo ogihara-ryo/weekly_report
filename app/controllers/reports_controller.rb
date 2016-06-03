@@ -18,7 +18,6 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new(report_params)
-
     if @report.save
       redirect_to @report, notice: '作成しました'
     else
