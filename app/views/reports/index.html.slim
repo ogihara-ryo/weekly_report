@@ -1,7 +1,8 @@
 - provide :title, t('title_report_index')
 
 - 3.times do |value|
-  h1 = "#{Date.today.beginning_of_week.weeks_ago(value)} - #{Date.today.beginning_of_week.weeks_ago(value) + 6.day}"
+  - days = weeks_ago(value)
+  h1 = "#{days.first.strftime('%m/%d')} - #{days.last.strftime('%m/%d')}"
 
   table.table.table-hover.table-condensed
     tbody
