@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_report
-  before_action :set_comment, only: %i(update destroy)
+  before_action :set_comment, only: %i(edit update destroy)
 
   def create
     @comment = Comment.new(comment_params)
@@ -9,6 +9,9 @@ class CommentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def update

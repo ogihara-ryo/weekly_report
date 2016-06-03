@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :reports do
-    resources :comments, only: %i(create update destroy)
+    resources :comments, only: %i(create edit update destroy)
   end
 end
