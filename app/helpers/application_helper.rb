@@ -7,8 +7,8 @@ module ApplicationHelper
     title.blank? ? WeeklyReport::Application.config.title : "#{title} | #{WeeklyReport::Application.config.title}"
   end
 
-  def weeks_ago(value)
-    from = (Date.today - value.week).beginning_of_week
+  def all_day_of_week_ago(value)
+    from = (Date.today - value.week).beginning_of_week.beginning_of_day
     to = (from + 6.day).end_of_day
     from..to
   end
