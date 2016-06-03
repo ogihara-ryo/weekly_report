@@ -1,3 +1,4 @@
+- provide :title, t('title_comment_edit')
 = form_for [@report, @comment] do |f|
   = f.hidden_field :report_id, value: @report.id
   = f.hidden_field :user_id, value: current_user&.id

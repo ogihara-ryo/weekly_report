@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title WeeklyReport
+    title = page_title(yield(:title))
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -11,7 +11,7 @@ html
       nav.navbar.navbar-default
         .container
           .navbar-header
-            = link_to 'Weekly Report', root_path, class: 'navbar-brand'
+            = link_to WeeklyReport::Application.config.title, root_path, class: 'navbar-brand'
 
             ul.nav.navbar-nav
               li = link_to '週報一覧', reports_path, class: 'btn btn-link'
