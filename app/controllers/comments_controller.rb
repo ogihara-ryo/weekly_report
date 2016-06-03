@@ -1,20 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_report
-  before_action :set_comment, only: %i(show edit update destroy)
-
-  def index
-    @comments = Comment.all
-  end
-
-  def show
-  end
-
-  def new
-    @comment = Comment.new
-  end
-
-  def edit
-  end
+  before_action :set_comment, only: %i(update destroy)
 
   def create
     @comment = Comment.new(comment_params)
