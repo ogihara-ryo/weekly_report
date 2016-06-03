@@ -4,11 +4,7 @@ module ApplicationHelper
   end
 
   def page_title(title)
-    if title.blank?
-      WeeklyReport::Application.config.title
-    else
-      "#{title} | #{WeeklyReport::Application.config.title}"
-    end
+    title.blank? ? WeeklyReport::Application.config.title : "#{title} | #{WeeklyReport::Application.config.title}"
   end
 
   def weeks_ago(value)
