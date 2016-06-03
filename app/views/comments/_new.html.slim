@@ -3,7 +3,7 @@
   = f.hidden_field :user_id, value: current_user&.id
 
   .form-group
-    = f.text_area :description, class: 'form-control', rows: '5', placeholder: 'コメント'
+    = f.text_area :description, class: 'form-control', rows: 5, placeholder: 'コメント'
 
   .actions.pull-right
     = f.submit 'コメントする', class: 'btn btn-default'

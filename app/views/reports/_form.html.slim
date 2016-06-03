@@ -1,13 +1,5 @@
 .form-horizontal
   = form_for @report do |f|
-    .form-group
-      - if @report.errors.any?
-        #error_explanation
-          h2 = "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
-          ul
-            - @report.errors.full_messages.each do |message|
-              li = message
-
     = f.hidden_field :user_id, value: current_user&.id
 
     .form-group
