@@ -33,5 +33,7 @@ module WeeklyReport
     config.active_record.raise_in_transactional_callbacks = true
 
     config.generators.template_engine = :slim
+
+    config.title = 'WeeklyReport'
   end
 end

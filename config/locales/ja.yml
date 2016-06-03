@@ -7,6 +7,14 @@ ja:
 
   message_invalid_signin: 'ID かパスワードが違います。'
 
+  title_report_index: '週報'
+  title_report_new: '週報 新規作成'
+  title_report_edit: '週報 編集'
+  title_comment_edit: 'コメント 編集'
+  title_user_index: 'ユーザー 一覧'
+  title_user_new: 'ユーザー 新規作成'
+  title_user_edit: 'ユーザー 編集'
+
   activerecord:
     attributes:
       user:
