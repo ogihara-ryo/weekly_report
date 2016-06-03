@@ -2,7 +2,6 @@
 
 .col-sm-6.col-md-4.col-md-offset-4
   = form_for(:session, url: signin_path, html: { class: 'form-signin' }) do |f|
-    / TODO: 自動でフォーカスが当たるようにする
     .form-group
       = f.text_field :signin_id, class: 'form-control', placeholder: t('activerecord.attributes.user.signin_id')
 
@@ -15,3 +14,6 @@
         span = t('label_remember_me')
 
     = f.submit t('button_signin'), class: 'btn btn-lg btn-primary btn-block'
+
+javascript:
+  document.getElementById('session_signin_id').focus();
