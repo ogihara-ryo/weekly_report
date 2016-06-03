@@ -1,0 +1,12 @@
+- 3.times do |value|
+  - days = weeks_ago(value)
+  h1 = "#{days.first.strftime('%m/%d')} - #{days.last.strftime('%m/%d')}"
+
+  table.table.table-hover.table-condensed
+    tbody
+      - Report.all.order(created_at: :desc).where(created_at: weeks_ago(value)).each do |report|
+        tr
+          td = link_to name_with_comment_count(report), report, class: 'btn btn-link'
+
+  - if value == 0
+    = link_to '新規作成', new_report_path, class: 'btn btn-default'
