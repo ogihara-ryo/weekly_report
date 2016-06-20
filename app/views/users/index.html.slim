@@ -1,6 +1,8 @@
 - provide :title, t('title_user_index')
 h1 Users
 
+- page_entries_info @users
+
 table.list
   thead
     tr
@@ -27,5 +29,6 @@ table.list
         td = link_to 'Destroy', user, data: {:confirm => '本当に削除しますか？'}, :method => :delete
 
 br
-
 = link_to 'New User', new_user_path
+br
+= paginate @users

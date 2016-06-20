@@ -15,6 +15,14 @@ ja:
   title_user_new: 'ユーザー 新規作成'
   title_user_edit: 'ユーザー 編集'
 
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "&hellip;"
+
   activerecord:
     attributes:
       user:

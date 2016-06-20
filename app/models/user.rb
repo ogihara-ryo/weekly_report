@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   before_create :create_remember_token
 
+  paginates_per 5
+
   def self.new_remember_token
     SecureRandom.urlsafe_base64
   end
