@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :favorite_users, through: :favorite_user_relations, source: :to
   has_many :reports
 
+  paginates_per 5
+
   def self.new_remember_token
     SecureRandom.urlsafe_base64
   end

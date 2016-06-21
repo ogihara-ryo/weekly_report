@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
   before_action :set_report, only: %i(show edit update destroy)
 
   def index
-    @reports = Report.all.order(created_at: :desc)
+    @reports = Report.page(params[:page]).order(created_at: :desc)
   end
 
   def show
