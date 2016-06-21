@@ -1,6 +1,12 @@
 - provide :title, @report.user.name
 p#notice = notice
 
+.pull-left
+  = link_to '前へ', @report.previous
+.pull-right
+  = link_to '次へ', @report.next
+.clearfix
+
 .panel.panel-default
   .panel-heading
     h3.panel-title
