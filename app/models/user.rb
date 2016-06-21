@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+
   before_create :create_remember_token
 
   has_many :favorite_user_relations, foreign_key: :from_id
