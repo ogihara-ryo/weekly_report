@@ -30,9 +30,8 @@ ActiveRecord::Schema.define(version: 20160620030408) do
   create_table "favorite_user_relations", force: :cascade do |t|
     t.integer  "from_id"
     t.integer  "to_id"
-    t.boolean  "favorite",   default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reports", force: :cascade do |t|
