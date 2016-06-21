@@ -5,6 +5,7 @@ p#notice = notice
   .panel-heading
     h3.panel-title
       = @report.user.name
+      = link_to favorite? ? '★' : '☆', favorite_user_path(user_id: @report.user.id), method: :post
 
   .panel-body
     dl.dl-horizontal
