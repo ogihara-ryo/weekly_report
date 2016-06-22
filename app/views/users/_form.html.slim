@@ -1,4 +1,4 @@
-.form
+.form-horizontal
   = form_for @user do |f|
     - if @user.errors.any?
       #error_explanation
@@ -7,23 +7,31 @@
           - @user.errors.full_messages.each do |message|
             li = message
 
-    .well
-      .form-inline
-        .form-group
-          = f.text_field :signin_id, class: 'form-control', placeholder: t('activerecord.attributes.user.signin_id')
+    .form-group
+      = f.label :signin_id, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_field :signin_id, class: 'form-control'
 
-        .form-group
-          = f.text_field :password, class: 'form-control', placeholder: t('activerecord.attributes.user.password')
+    .form-group
+      = f.label :password, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_field :password, class: 'form-control'
 
-        .form-group
-          = f.text_field :password_confirmation, class: 'form-control', placeholder: t('activerecord.attributes.user.password_confirmation')
+    .form-group
+      = f.label :password_confirmation, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_field :password_confirmation, class: 'form-control'
 
-        .form-group
-          = f.text_field :name, class: 'form-control', placeholder: t('activerecord.attributes.user.name')
+    .form-group
+      = f.label :name, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_field :name, class: 'form-control'
 
-        .form-group
-          = f.label :admin
-          = f.check_box :admin
+    .form-group
+      = f.label :admin, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.check_box :admin, class: 'form-control'
 
-        .form-group
-          = f.submit class: 'btn btn-primary'
+    .actions
+      .col-sm-offset-2
+        = f.submit '送信', class: 'btn btn-default'
