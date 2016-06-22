@@ -1,34 +1,25 @@
 - provide :title, t('title_user_index')
-h1 Users
+h1 ユーザー 一覧
 
-- page_entries_info @users
-
-table.list
-  thead
-    tr
-      th id
-      th name
-      th admin
-      th created_at
-      th update_at
-      th
-      th
-      th
-
-  tbody
-    - @users.each do |user|
+table.table.table-hover
+    thead
       tr
-        td = user.id
-        td = user.name
-        td = user.admin
-        td = user.created_at
-        td = user.updated_at
-        / TODO: 行全体を show リンクとし、 show ボタンを削除
-        td = link_to 'Show', user
-        td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Destroy', user, data: {:confirm => '本当に削除しますか？'}, :method => :delete
+        th = t('activerecord.attributes.user.signin_id')
+        th = t('activerecord.attributes.user.name')
+        th = t('activerecord.attributes.user.admin')
+        th
+        th
+
+    tbody
+      - @users.each do |user|
+          tr
+            td = user.signin_id
+            td = link_to user.name, user
+            td = user.admin
+            td = link_to '編集', edit_user_path(user)
+            td = link_to '削除', user, data: {:confirm => '本当に削除しますか？'}, :method => :delete
 
 br
-= link_to 'New User', new_user_path
+= link_to '新規作成', new_user_path, class: 'btn btn-default'
 br
 = paginate @users
