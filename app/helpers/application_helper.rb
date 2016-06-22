@@ -3,6 +3,10 @@ module ApplicationHelper
     report.comments.present? ? "#{report.user.name} (#{report.comments.count})" : report.user.name
   end
 
+  def created_at_with_comment_count(report)
+    report.comments.present? ? "#{report.user.created_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]})")} (#{report.comments.count})" : report.user.created_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]})")
+  end
+
   def page_title(title)
     title.blank? ? WeeklyReport::Application.config.title : "#{title} | #{WeeklyReport::Application.config.title}"
   end
