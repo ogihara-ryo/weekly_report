@@ -1,0 +1,13 @@
+- provide :title, t('title_my_report_index')
+
+h1 my週報 一覧
+
+table.table.table-hover.table-condensed
+  tbody
+    - @my_reports.each do |report|
+      tr
+        td = link_to created_at_with_comment_count(report), report, class: 'btn btn-link'
+
+= link_to '新規作成', new_report_path, class: 'btn btn-default'
+
+= paginate @my_reports

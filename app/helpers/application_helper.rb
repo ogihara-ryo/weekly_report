@@ -2,6 +2,14 @@ module ApplicationHelper
   def name_with_comment_count(report)
     report.comments.present? ? "#{report.user.name} (#{report.comments.count})" : report.user.name
   end
+  
+  def created_at_with_comment_count(report)
+    l(report.created_at, format: :report) + render_comment_count(report)
+  end
+
+  def render_comment_count(report)
+    " (#{report.comments.count})"
+  end
 
   def page_title(title)
     title.blank? ? WeeklyReport::Application.config.title : "#{title} | #{WeeklyReport::Application.config.title}"
