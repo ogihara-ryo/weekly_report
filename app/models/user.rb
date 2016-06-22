@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :favorite_user_relations, foreign_key: :from_id
   has_many :favorite_users, through: :favorite_user_relations, source: :to
-  has_many :reports
+  has_many :reports, dependent: :destroy
 
   def self.new_remember_token
     SecureRandom.urlsafe_base64

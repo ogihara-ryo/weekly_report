@@ -1,6 +1,6 @@
 class Report < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   def previous
     Report.where('id < ?', self.id).order(created_at: :desc, id: :desc).first
