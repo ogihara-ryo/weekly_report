@@ -15,6 +15,7 @@ ja:
   title_user_new: 'ユーザー 新規作成'
   title_user_edit: 'ユーザー 編集'
   title_favorite_user_index: 'お気に入りユーザー 一覧'
+  title_report_index: 'my週報 一覧'
 
   views:
     pagination:

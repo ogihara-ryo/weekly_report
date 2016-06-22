@@ -1,0 +1,16 @@
+- provide :title, t('title_my_report_index')
+
+- 3.times do |value|
+  - days = all_day_of_week_ago(value)
+  h1 = "#{l(days.first, format: :report)} - #{l(days.last, format: :report)}"
+
+  table.table.table-hover.table-condensed
+    tbody
+      - @my_reports.where(created_at: all_day_of_week_ago(value)).each do |report|
+        tr
+          td = link_to name_with_comment_count(report), report, class: 'btn btn-link'
+
+  - if value == 0
+    = link_to '新規作成', new_report_path, class: 'btn btn-default'
+
+= paginate @my_reports

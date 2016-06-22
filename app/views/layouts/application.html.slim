@@ -16,6 +16,7 @@ html
             ul.nav.navbar-nav
               li = link_to '週報一覧', reports_path, class: 'btn btn-link'
               li = link_to 'お気に入りユーザー 一覧', favorite_users_path, class: 'btn btn-link'
+              li = link_to 'my週報 一覧', my_reports_path, class: 'btn btn-link'
               - if current_user&.admin?
                 li = link_to 'ユーザー一覧', users_path, class: 'btn btn-link'
 
