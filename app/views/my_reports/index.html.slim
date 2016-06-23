@@ -8,6 +8,7 @@ table.table.table-hover.table-condensed
       tr
         td = link_to created_at_with_comment_count(report), report, class: 'btn btn-link'
 
+br
 = link_to '新規作成', new_report_path, class: 'btn btn-default'
-
+br
 = paginate @my_reports
