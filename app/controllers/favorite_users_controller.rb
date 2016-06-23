@@ -2,7 +2,7 @@ class FavoriteUsersController < ApplicationController
   before_action :set_user, only: :toggle
 
   def index
-    @favorite_reports = Report.where(user: current_user.favorite_users).page(params[:page]).order(id: :asc)
+    @favorite_reports = Report.where(user: current_user.favorite_users).page(params[:page]).order(:id)
   end
 
   def toggle
