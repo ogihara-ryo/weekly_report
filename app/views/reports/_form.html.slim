@@ -1,3 +1,7 @@
+= link_to '最新の週報内容','#', class: 'btn btn-default pull-right', id: 'my_last_report'
+.clearfix
+br
+
 .form-horizontal
   = form_for @report do |f|
     = f.hidden_field :user_id, value: current_user&.id
