@@ -39,6 +39,15 @@ class ReportsController < ApplicationController
     redirect_to reports_url, notice: '削除しました'
   end
 
+  def latest_report
+    @latest_report = Report.where(user: current_user).order(:created_at).last
+    if @latest_report
+      render json: @latest_report and return if request.xhr?
+    else
+      render json: Report.new and return request.xhr?
+    end
+  end
+
   private
 
   def set_report
