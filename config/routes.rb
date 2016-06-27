@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :reports do
     resources :comments, only: %i(create edit update destroy)
-    get 'set_last_report_form' => 'reports#set_last_report_form'
+    get 'latest_report' => 'reports#latest_report'
   end
   resources :my_reports, only: %i(index)
 end

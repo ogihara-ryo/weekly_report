@@ -1,12 +1,12 @@
 $ ->
-  $('#my_last_report').click ->
+  $('#latest_report_button').click ->
     $.ajax({
-      url: 'reports/set_last_report_form'
+      url: 'reports/latest_report'
       type: 'GET'
     }).done (data, stat, xhr) ->
-      set_last_report_form(data)
+      latest_report(data)
 
-set_last_report_form = (data) ->
+latest_report = (data) ->
   $('textarea#report_place').val(data.place)
   $('input#report_overwork').val(data.overwork)
   $('textarea#report_work').val(data.work)
