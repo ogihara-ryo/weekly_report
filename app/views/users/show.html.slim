@@ -14,6 +14,5 @@
       dt = t 'activerecord.attributes.user.admin'
       dd = @user.admin
 
-= link_to '編集', edit_user_path(@user)
-'|
-= link_to '戻る', users_path
+.pull-right
+  = link_to '編集', edit_user_path(@user)

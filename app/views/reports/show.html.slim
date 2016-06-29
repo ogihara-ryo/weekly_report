@@ -47,11 +47,7 @@ p#notice = notice
 .pull-right
   - if current_user?(@report.user)
     = link_to '編集', edit_report_path(@report), class: 'btn btn-link'
-    '|
-  = link_to '戻る', reports_path, class: 'btn btn-link'
-
-br
-hr
+.clearfix
 
 == render 'comments/index'
 
