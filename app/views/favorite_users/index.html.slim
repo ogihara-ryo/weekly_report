@@ -1,15 +1,19 @@
 - provide :title, t('title_favorite_user_index')
 h1 お気に入りユーザー 一覧
 
-- 3.times do |value|
-  - days = all_day_of_week_ago(value)
-  h1 = "#{l(days.first, format: :report)} - #{l(days.last, format: :report)}"
+- if @favorite_reports.present?
+  - 3.times do |value|
+    - days = all_day_of_week_ago(value)
+    h1 = "#{l(days.first, format: :report)} - #{l(days.last, format: :report)}"
 
-  table.table.table-hover.table-condensed
-    tbody
-      - @favorite_reports.where(created_at: all_day_of_week_ago(value)).each do |report|
-        tr
-          td = link_to name_with_comment_count(report), report, class: 'btn btn-link'
+    table.table.table-hover.table-condensed
+      tbody
+        - @favorite_reports.where(created_at: all_day_of_week_ago(value)).each do |report|
+          tr
+            td = link_to name_with_comment_count(report), report, class: 'btn btn-link'
+- else
+  h2 お気に入りユーザーは登録されていません
+
 
 br
 = paginate @favorite_reports
